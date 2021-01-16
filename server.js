@@ -9,6 +9,11 @@ const mockUserData=[
 	{name:'Jill'}
 ]
 
+const factData=[
+	{fact:'sky is blue'},
+	{fact:'communism will succed in the end'}
+]
+
 app.get('/users',function(req,res){
 	res.json({
 		success: true,
@@ -22,7 +27,16 @@ app.get('/users/:id',function(req,res){
 	res.json({
 		success: true,
 		message: 'got one user',
-		user: req.params.id
+		user: mockUserData
+	})
+})
+
+app.get('/facts',function(req,res){
+	console.log(req.params.id)
+	res.json({
+		success: true,
+		message: 'new fact',
+		fact: factData
 	})
 })
 
